@@ -5,9 +5,9 @@
 # How to build from source
  Make sure you have [gcc](https://gcc.gnu.org/releases.html) installed.
 
- First download the source and run `g++ main.cpp` in cmd or pwsh.
+ First download the source of tsnode and run `g++ main.cpp` in cmd or pwsh.
 
- rename the exe to what you want the command to be.
+ rename the exe to what you want the command to be. (the official command is tsnode)
 
  Then make a folder in the c drive and name it whatever you want.
 
@@ -24,7 +24,11 @@
  Then it should be done!
 
 # How to install normally
- Just skip step 1 and 2
+ Download the latest version from the releases tab and skip step 1, 2 and 3
+
+# How to use
+ Very simple.
+ Just go to a dir with a ts file and run what you set the exe name name as and then the name of your ts file not including the file extension
 
 # Yes I know this has already be done
  I know there are better tools for this exact purpose out there.

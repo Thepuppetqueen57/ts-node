@@ -400,5 +400,6 @@ FodyWeavers.xsd
 # Visual studio code folder
 .vscode
 
-# Test exe
+# exes
 a.exe
+tsnode.exe

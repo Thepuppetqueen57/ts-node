@@ -12,12 +12,12 @@ int main(int argc, char *argv[]) {
     }
 
     // Construct the command string
-    string command = "tsc ";
-    command += argv[1];
-    command += ".ts";
+    string cmd = "tsc ";
+    cmd += argv[1];
+    cmd += ".ts";
 
     // Execute the command
-    int result = system(command.c_str());
+    int result = system(cmd.c_str());
 
     // Check if the command was successful
     if (result == -1) {
@@ -26,29 +26,29 @@ int main(int argc, char *argv[]) {
     }
 
     // Construct the command string
-    string nodcmd = "node ";
-    nodcmd += argv[1];
-    nodcmd += ".js";
+    string nodecmd = "node ";
+    nodecmd += argv[1];
+    nodecmd += ".js";
 
     // Execute the command
-    int nodres = system(nodcmd.c_str());
+    int noderesult = system(nodecmd.c_str());
 
     // Check if the command was successful
-    if (nodres == -1) {
+    if (noderesult == -1) {
         cerr << "Error: Failed to execute the command." << endl;
         return 1;
     }
 
     // Construct the command string
-    string delcmd = "del ";
-    delcmd += argv[1];
-    delcmd += ".js";
+    string deletecmd = "del ";
+    deletecmd += argv[1];
+    deletecmd += ".js";
 
     // Execute the command
-    int delres = system(delcmd.c_str());
+    int deleteresult = system(deletecmd.c_str());
 
     // Check if the command was successful
-    if (delres == -1) {
+    if (deleteresult == -1) {
         cerr << "Error: Failed to execute the command." << endl;
         return 1;
     }
