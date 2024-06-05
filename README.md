@@ -28,7 +28,9 @@
 
 # How to use
  Very simple.
- Just go to a dir with a ts file and run what you set the exe name name as and then the name of your ts file not including the file extension
+ Make sure you have [nodejs](https://nodejs.org/en) installed and if you do run `npm install -g typescript
+`
+ then just go to a dir with a ts file and run what you set the exe name name as and then the name of your ts file not including the file extension
 
 # Yes I know this has already be done
  I know there are better tools for this exact purpose out there.
