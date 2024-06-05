@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstdlib>
 #include <string>
 
 using namespace std;
@@ -7,7 +6,7 @@ using namespace std;
 int main(int argc, char *argv[]) {
     // Check if the correct amount of arguments are taken
     if (argc != 2) {
-        cerr << "Usage: tsnode.exe <arg> (dont add the file extension)" << std::endl;
+        cerr << "Usage: tsnode <arg> (dont add the file extension)" << std::endl;
         return 1;
     }
 
