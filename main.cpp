@@ -6,49 +6,51 @@ using namespace std;
 int main(int argc, char *argv[]) {
     // Check if the correct amount of arguments are taken
     if (argc != 2) {
-        cerr << "Usage: tsnode <arg> (dont add the file extension)" << std::endl;
+        cerr << "Usage: tsnode <arg> (file extension is optional)" << std::endl;
         return 1;
     }
 
-    // Construct the command string
-    string cmd = "tsc ";
-    cmd += argv[1];
-    cmd += ".ts";
+    // Convert argv[1] to a string
+    string arg = argv[1];
 
-    // Execute the command
+    // Check if the argument ends with ".ts" and remove it if present
+    if (arg.size() > 3 && arg.substr(arg.size() - 3) == ".ts") {
+        arg = arg.substr(0, arg.size() - 3);
+    }
+
+    // Construct the command string for tsc
+    string cmd = "tsc " + arg + ".ts";
+
+    // Execute the tsc command
     int result = system(cmd.c_str());
 
-    // Check if the command was successful
+    // Check if the tsc command was successful
     if (result == -1) {
-        cerr << "Error: Failed to execute the command." << endl;
+        cerr << "Error: Failed to execute the tsc command." << endl;
         return 1;
     }
 
-    // Construct the command string
-    string nodecmd = "node ";
-    nodecmd += argv[1];
-    nodecmd += ".js";
+    // Construct the command string for node
+    string nodecmd = "node " + arg + ".js";
 
-    // Execute the command
+    // Execute the node command
     int noderesult = system(nodecmd.c_str());
 
-    // Check if the command was successful
+    // Check if the node command was successful
     if (noderesult == -1) {
-        cerr << "Error: Failed to execute the command." << endl;
+        cerr << "Error: Failed to execute the node command." << endl;
         return 1;
     }
 
-    // Construct the command string
-    string deletecmd = "del ";
-    deletecmd += argv[1];
-    deletecmd += ".js";
+    // Construct the command string for delete
+    string deletecmd = "del " + arg + ".js";
 
-    // Execute the command
+    // Execute the delete command
     int deleteresult = system(deletecmd.c_str());
 
-    // Check if the command was successful
+    // Check if the delete command was successful
     if (deleteresult == -1) {
-        cerr << "Error: Failed to execute the command." << endl;
+        cerr << "Error: Failed to execute the delete command." << endl;
         return 1;
     }
 

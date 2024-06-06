@@ -403,3 +403,6 @@ FodyWeavers.xsd
 # exes
 a.exe
 tsnode.exe
+
+# Misc stuff
+move.cmd
