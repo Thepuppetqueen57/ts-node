@@ -35,3 +35,4 @@
 # Yes I know this has already be done
  I know there are better tools for this exact purpose out there.
  But I didn't know that when I started this project so I didnt want it to go to waste.
+ EDIT: HELP I JUST FOUND OUT THERE IS ANOTHER PROJECT THAT RUNS TS CODE WITH NODE CALLED TSNODE YOU ARE KIDDING ME
