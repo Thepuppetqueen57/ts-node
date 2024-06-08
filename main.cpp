@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "lib/tsnl.hpp"
 
 using namespace std;
 
@@ -13,45 +14,31 @@ int main(int argc, char *argv[]) {
     // Convert argv[1] to a string
     string arg = argv[1];
 
-    // Check if the argument ends with ".ts" and remove it if present
-    if (arg.size() > 3 && arg.substr(arg.size() - 3) == ".ts") {
-        arg = arg.substr(0, arg.size() - 3);
+    // Call the cmdd function from the library
+    int cmdd_result = cmdd(arg);
+
+    // Check the result of cmdd
+    if (cmdd_result != 0) {
+        cerr << "cmdd function failed. Exiting program." << endl;
+        return cmdd_result;
     }
 
-    // Construct the command string for tsc
-    string cmd = "tsc " + arg + ".ts";
-
-    // Execute the tsc command
-    int result = system(cmd.c_str());
-
-    // Check if the tsc command was successful
-    if (result == -1) {
-        cerr << "Error: Failed to execute the tsc command." << endl;
-        return 1;
-    }
-
-    // Construct the command string for node
-    string nodecmd = "node " + arg + ".js";
-
-    // Execute the node command
-    int noderesult = system(nodecmd.c_str());
+    // Call the node execution function
+    int noderesult = run_node(arg);
 
     // Check if the node command was successful
-    if (noderesult == -1) {
+    if (noderesult != 0) {
         cerr << "Error: Failed to execute the node command." << endl;
-        return 1;
+        return noderesult;
     }
 
-    // Construct the command string for delete
-    string deletecmd = "del " + arg + ".js";
-
-    // Execute the delete command
-    int deleteresult = system(deletecmd.c_str());
+    // Call the delete function
+    int deleteresult = delete_file(arg);
 
     // Check if the delete command was successful
-    if (deleteresult == -1) {
+    if (deleteresult != 0) {
         cerr << "Error: Failed to execute the delete command." << endl;
-        return 1;
+        return deleteresult;
     }
 
     return 0;

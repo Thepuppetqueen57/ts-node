@@ -5,7 +5,7 @@
 # How to build from source
  Make sure you have [gcc](https://gcc.gnu.org/releases.html) installed.
 
- First download the source of tsnode and run `g++ main.cpp` in cmd or pwsh.
+ First download the source of tsnode and run `g++ -o myprogram main.cpp lib/tsnl.cpp` in cmd or pwsh.
 
  rename the exe to what you want the command to be. (the official command is tsnode)
 
